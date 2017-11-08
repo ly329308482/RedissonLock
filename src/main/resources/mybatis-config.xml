@@ -1,0 +1,11 @@
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.wcj.emp.dao"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="emp/mapper/EmpMapper.xml"/>
+    </mappers>
+</configuration>
