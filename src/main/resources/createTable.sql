@@ -1,4 +1,4 @@
-reate table emp (
+create table emp (
     empno numeric(4) not null,
     ename varchar(10),
     job varchar(9),
