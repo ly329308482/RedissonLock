@@ -18,12 +18,15 @@
 > * 见pom.xml文件
 ## application.yml配置(也可用application.properties配置)
 server:
-  port: 8080
+
+     port: 8080
 
 redis:
-  address: redis://127.0.0.1:6379
+
+     address: redis://127.0.0.1:6379
 
 spring:
+
     datasource:
         name: wcj
         url: jdbc:mysql://127.0.0.1:3306/wcj?useUnicode=true&characterEncoding=utf-8
@@ -46,9 +49,11 @@ spring:
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
 mybatis:
+
     config-location: classpath:mybatis-config.xml
 logging:
-  level: debug
+
+    level: debug
 ## Mybatis-config.xml配置
     <configuration>
         <typeAliases>
