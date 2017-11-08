@@ -1,4 +1,4 @@
-## Redisson实现缓存
+## Redisson实现缓存和分布式锁
 
 ## 使用框架
 > * spring boot + mybatis
@@ -58,6 +58,14 @@ logging:
             <mapper resource="emp/mapper/EmpMapper.xml"/>
         </mappers>
     </configuration>
+
+##缓存
+> * 自定义cache管理器RedissonJCacheManager
+
+##分布式锁
+> * 分布式锁工具类DistributedRedissionLock
+
 ## 注意事项：项目依赖的redis服务端需支持eval，建议2.8.x以上的版本
 > * [redis 3.2.x 安装](http://jingyan.baidu.com/article/0f5fb099045b056d8334ea97.html)
 > * [mysql 5.7.1安装](http://note.youdao.com/noteshare?id=935dfbf5be78de584ebd68ed8320a1bd)
+
