@@ -59,11 +59,18 @@ logging:
         </mappers>
     </configuration>
 
-## 缓存
+##缓存
 > * 自定义cache管理器RedissonJCacheManager
 
-## 分布式锁
+##分布式锁（目前是单机，后续改主从，或者集群）
 > * 分布式锁工具类DistributedRedissionLock
+> * redisson支持多种redis连接
+
+            1.SentinelServersConfig（哨兵）
+            2.MasterSlaveServersConfig（主从）
+            3.SingleServerConfig（单机）
+            4.ClusterServersConfig（集群）
+            5.ReplicatedServersConfig（一主多从）
 
 ## 注意事项：项目依赖的redis服务端需支持eval，建议2.8.x以上的版本
 > * [redis 3.2.x 安装](http://jingyan.baidu.com/article/0f5fb099045b056d8334ea97.html)
