@@ -59,10 +59,10 @@ logging:
         </mappers>
     </configuration>
 
-##缓存
+## 缓存
 > * 自定义cache管理器RedissonJCacheManager
 
-##分布式锁
+## 分布式锁
 > * 分布式锁工具类DistributedRedissionLock
 
 ## 注意事项：项目依赖的redis服务端需支持eval，建议2.8.x以上的版本
