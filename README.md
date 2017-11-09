@@ -64,10 +64,10 @@ logging:
         </mappers>
     </configuration>
 
-##缓存
+## 缓存
 > * 自定义cache管理器RedissonJCacheManager
 
-##分布式锁（目前是单机，后续改主从，或者集群）
+## 分布式锁（目前是单机，后续改主从，或者集群）
 > * 分布式锁工具类DistributedRedissionLock
 > * redisson支持多种redis连接
 
