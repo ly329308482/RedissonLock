@@ -2,7 +2,11 @@ server:
   port: 8080
 
 redis:
-  address: redis://127.0.0.1:6379
+  address:
+    master: redis://127.0.0.1:6379
+    slave: redis://172.16.9.113:6379
+    cluster: redis://127.0.0.1:7001,redis://127.0.0.1:7002,redis://127.0.0.1:7003,redis://127.0.0.1:7004,redis://127.0.0.1:7005,redis://127.0.0.1:7006
+  connectionMode: 3
 
 spring:
     datasource:

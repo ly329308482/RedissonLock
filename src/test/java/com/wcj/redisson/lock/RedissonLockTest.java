@@ -42,7 +42,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         done.countDown();
         //主线程结束之后，类似jvm终止，finally代码块始终不执行
         // 所以需要加长主线程睡眠时间
-        Thread.sleep(10000);
+        Thread.sleep(100000);
     }
 
     /**

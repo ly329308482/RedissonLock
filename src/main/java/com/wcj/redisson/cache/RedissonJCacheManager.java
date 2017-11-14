@@ -12,10 +12,8 @@ import javax.cache.spi.CachingProvider;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * Created by chengjie.wang on 2017/9/30.
@@ -31,7 +29,7 @@ public class RedissonJCacheManager<K, V> {
     public Cache<K,V> getCache(String cacheName, Duration duration) {
         Cache<K,V> cache = cacheMap.get(cacheName);
         if(null == cache){
-            URL url= this.getClass().getClassLoader().getResource("jcache/redisson-jcache.json");
+            URL url= this.getClass().getClassLoader().getResource("jcache/redisson-clusterServerConfig-jcache.json");
             try {
                 configUri = url.toURI();
             } catch (URISyntaxException e) {

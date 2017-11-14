@@ -54,13 +54,13 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.3.12.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.redisson:redisson:2.10.1" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.13.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.13.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.13.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.13.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.13.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.13.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.redisson:redisson:2.10.5" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.16.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.cache:cache-api:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-stream:2.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:2.0.8.RELEASE" level="project" />
