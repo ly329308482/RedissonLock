@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+import static com.jayway.awaitility.Awaitility.await;
+
 /**
  *分布式锁测试
  * Created by chengjie.wang on 2017/9/27.
@@ -40,9 +42,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         PrintUtil.printInfo("主线程结束，其他线程开始工作");
         //发令枪打枪，其他线程开始运行
         done.countDown();
-        //主线程结束之后，类似jvm终止，finally代码块始终不执行
-        // 所以需要加长主线程睡眠时间
-        Thread.sleep(100000);
+        await().atMost(10,TimeUnit.SECONDS).until(() ->10 == increase.size());
     }
 
     /**
@@ -62,9 +62,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         PrintUtil.printInfo("主线程结束，其他线程开始工作");
         //发令枪打枪，其他线程开始运行
         done.countDown();
-        //主线程结束之后，类似jvm终止，finally代码块始终不执行
-        // 所以需要加长主线程睡眠时间
-        Thread.sleep(30000);
+        await().atMost(60,TimeUnit.SECONDS).until(() ->10 == increase.size());
     }
 
     /**
@@ -88,7 +86,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         done.countDown();
         //主线程结束之后，类似jvm终止，finally代码块始终不执行
         // 所以需要加长主线程睡眠时间
-        Thread.sleep(10000);
+        await().atMost(10,TimeUnit.SECONDS).until(() ->10 == increase.size());
     }
 
     /**
@@ -99,7 +97,6 @@ public class RedissonLockTest extends BaseRedissonLockTest {
     @Test
     @Override
     public void tryLockExpireTest() throws InterruptedException {
-        //十个线程并发执行
         //锁持有时间为5秒
         Thread thread = new Thread(new Worker(done,increase,false,5L, TimeUnit.SECONDS));
         thread.setName("1号线程...trylockExpire");
@@ -112,7 +109,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         done.countDown();
         //主线程结束之后，类似jvm终止，finally代码块始终不执行
         // 所以需要加长主线程睡眠时间
-        Thread.sleep(10000);
+        await().atMost(10,TimeUnit.SECONDS).until(() ->2 == increase.size());
     }
 
     /**
@@ -165,9 +162,7 @@ public class RedissonLockTest extends BaseRedissonLockTest {
         PrintUtil.printInfo("主线程结束，其他线程开始工作");
         //发令枪打枪，其他线程开始运行
         done.countDown();
-        //主线程结束之后，类似jvm终止，finally代码块始终不执行
-        // 所以需要加长主线程睡眠时间
-        Thread.sleep(30000);
+        await().forever().catchUncaughtExceptions();
     }
 }
 /**

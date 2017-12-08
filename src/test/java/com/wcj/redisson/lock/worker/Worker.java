@@ -69,8 +69,10 @@ public class Worker<T> extends BaseWorker implements Runnable  {
         } finally {
             PrintUtil.printInfo(Thread.currentThread()+ "释放锁前状态====>" + DistributedRedissionLock.islocked(lockName));
             //解锁操作
-            Assert.isTrue(unLockFlag,"放弃释放锁，会造成死锁");
-            DistributedRedissionLock.unlock(lockName);
+//            Assert.isTrue(unLockFlag,"放弃释放锁，会造成死锁");
+            if(unLockFlag){
+                DistributedRedissionLock.unlock(lockName);
+            }
 //            System.out.println(Thread.currentThread()+"释放锁后的状态====>"+DistributedRedissionLock.islocked(lockName));
 //            Assert.isTrue(!DistributedRedissionLock.islocked(lockName),"释放失败");
         }

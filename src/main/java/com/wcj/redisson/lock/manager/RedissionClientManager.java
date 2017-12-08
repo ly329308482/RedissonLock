@@ -102,12 +102,13 @@ public class RedissionClientManager implements InitializingBean {
         sentinel(3),
         cluster(4);
 
-        private Integer key ;
+        private int key ;
+
         ConnectionMode(int i) {
             this.key = i;
         }
 
-        private Integer getKey(){
+        private int getKey(){
             return key;
         }
     }

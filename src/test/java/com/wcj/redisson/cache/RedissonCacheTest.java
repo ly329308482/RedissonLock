@@ -1,6 +1,6 @@
 package com.wcj.redisson.cache;
 
-import com.wcj.emp.service.EmpService;
+import com.wcj.emp.service.EmpRWService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -17,10 +17,22 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class RedissonCacheTest {
     Logger logger = LoggerFactory.getLogger(RedissonCacheTest.class);
     @Autowired
-    private EmpService empService;
+    private EmpRWService empService;
     @Test
     public void jcacheTest(){
-        String result = empService.queryEmp();
-        logger.info("result:"+result);
+        for(int i = 0;i<10;i++){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String result = empService.queryEmp();
+                    logger.info("result:"+result);
+                }
+            }).start();
+        }
+        try {
+            Thread.sleep(20*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
