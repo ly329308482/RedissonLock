@@ -8,6 +8,7 @@ redis:
     cluster: redis://127.0.0.1:7001,redis://127.0.0.1:7002,redis://127.0.0.1:7003,redis://127.0.0.1:7004,redis://127.0.0.1:7005,redis://127.0.0.1:7006
   connectionMode: 3
 
+
 spring:
     datasource:
         name: wcj
@@ -30,6 +31,28 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+#    redis:
+#      cluster:
+#        nodes:
+#        - 127.0.0.1:7000
+#        - 127.0.0.1:7001
+#        - 127.0.0.1:7002
+#        - 127.0.0.1:7003
+#        - 127.0.0.1:7004
+#        - 127.0.0.1:7005
+#      pool:
+#        max-active: 10
+#        maxIdle: 0
+    thymeleaf:
+      encoding: UTF-8
+      checkTemplate: true
+      checkTemplateLocation: true
+      prefix: classpath:/templates/
+      suffix: .html
+      mode: HTML5
+      contentType: text/html
+      cache: false
+
 mybatis:
     config-location: classpath:mybatis-config.xml
 logging:
