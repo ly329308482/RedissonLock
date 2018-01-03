@@ -1,5 +1,7 @@
 package com.wcj.web.service;
 
+import com.wcj.web.exception.DilatationException;
+import com.wcj.web.model.po.AddClusterInfo;
 import com.wcj.web.model.vo.ClusterNodeInfo;
 
 import java.util.List;
@@ -13,4 +15,10 @@ public interface RedisClusterInfoService {
      * @return
      */
     List<ClusterNodeInfo> getRedisClusterInfo();
+
+    /**
+     * 对集群进行扩容
+     * @param addClusterInfo
+     */
+    void addClusterNode(AddClusterInfo addClusterInfo) throws DilatationException;
 }
